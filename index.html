@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocito</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,700&family=Poppins:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        nav {
+            background-color: rgba(10, 80, 137, 0.559);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 10px 10px 5px rgba(24, 23, 23, 0.468);
+        }
+
+        #imglogo img {
+            width: 70px;
+            margin: 10px 0px 10px 0px;
+            filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
+        }
+
+        li {
+
+            list-style: none;
+        }
+
+        .logoo {
+            display: none;
+        }
+
+        .left ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            align-items: center;
+            margin-left: 5px;
+        }
+
+        .left ul li img {
+            list-style: none;
+            margin-left: 15px;
+            color: white;
+        }
+
+        .abc {
+            list-style: none;
+            margin-left: 15px;
+            color: white;
+            font-size: 4.5mm;
+        }
+
+        .abc:hover {
+            list-style: none;
+            margin-left: 15px;
+            color: white;
+            text-decoration-line: underline;
+            transform-origin: center;
+            transform: scale(1.05);
+            transition: transform .3s ease-out;
+            cursor: pointer;
+        }
+
+        #logoname {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.515);
+        }
+
+        #wishlist img {
+            width: 40px;
+            margin: 5px;
+            border-radius: 50%;
+        }
+
+        #wishlist img:hover {
+            width: 43px;
+            margin: 5px 3.5px 5px 3.5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #profile img {
+            width: 40px;
+            margin: 5px;
+            border-radius: 50%;
+        }
+
+        #profile img:hover {
+            width: 43px;
+            margin: 5px 3.5px 5px 3.5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .right ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: center
+        }
+
+        #search {
+            height: 30px;
+            width: 300px;
+            padding-left: 10px;
+            border-top-left-radius: 15px;
+            border-width: 0.5px;
+        }
+
+        .searchlogo img {
+            margin: 2px;
+            height: 23px;
+            width: 23px;
+            border-radius: 3PX;
+            border-top-right-radius: 1px;
+            border-bottom-left-radius: 2px;
+        }
+
+        .searchlogo {
+            background-color: rgba(13, 211, 178, 0);
+            border-left: hidden;
+            border-bottom-right-radius: 10px;
+            border-width: 0.5px;
+        }
+
+        .searchlogo:hover {
+            background-color: rgba(21, 204, 97, 0.549);
+            cursor: pointer;
+        }
+
+        .right ul li {
+            list-style: none;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .element {
+            margin: 20px 25px;
+            height: 320px;
+            border-radius: 30px;
+            background-size: cover;
+            transition: background-image 0.5s step-end;
+            box-shadow: 0px 0px 7px rgb(0, 0, 0);
+            background-image: url(image4.jpg
+);
+        }
+
+        .element:hover {
+            margin: 20px 25px;
+            height: 320px;
+            border-radius: 30px;
+            background-size: cover;
+            transition: background-image 0.5s step-end;
+            box-shadow: 0px 0px 4px rgb(0, 0, 0);
+            cursor: pointer;
+            background-image: url(image4.jpg
+);
+        }
+
+        .grocery {
+            margin-left: 25px;
+            display: flex;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+            padding: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .groceryall ul {
+            margin-left: 25px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+
+
+        .groceryall {
+            overflow: scroll;
+        }
+
+        .grocery img {
+            width: 180px;
+            height: 190px;
+            overflow: hidden;
+            transition: all ease 0.5s;
+        }
+
+        .grocery img:hover {
+            scale: 1.1;
+        }
+
+        .main {
+            border-right: 2px solid rgba(0, 0, 0, 0.67);
+            padding-right: 15px;
+            text-align: center;
+            line-height: 30px;
+            height: 220px;
+            width: 30px;
+            font-size: 20px;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .main:hover {
+            border-right: 2px solid rgba(0, 0, 0, 0.67);
+            padding-right: 15px;
+            cursor: pointer;
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        .groceryall img {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.452);
+            margin-right: 15px;
+
+        }
+
+        .fashion {
+            margin-left: 25px;
+            display: flex;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+            padding: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            height: 230px;
+        }
+
+        .fashionall {
+            overflow: scroll;
+        }
+
+        .fashionall ul {
+            margin-left: 25px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .fashion img {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            transition: all ease 0.5s;
+        }
+
+        .fashion img:hover {
+            scale: 1.1;
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        .fashionall img {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.452);
+            margin-right: 15px;
+        }
+
+        .electronics {
+            margin-left: 25px;
+            display: flex;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+            padding: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            height: 230px;
+
+        }
+
+        .electronicsall ul {
+            margin-left: 25px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .electronicsall {
+            overflow: scroll;
+        }
+
+        .electronics img {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            transition: all ease 0.5s;
+        }
+
+        .electronics img:hover {
+            scale: 1.1;
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        .electronicsall img {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.452);
+            margin-right: 15px;
+        }
+
+        .fitness {
+            margin-left: 25px;
+            display: flex;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+            padding: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            height: 230px;
+
+        }
+
+        .fitnessall ul {
+            margin-left: 25px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .fitnessall {
+            overflow: scroll;
+        }
+
+        .fitness img {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            transition: all ease 0.5s;
+        }
+
+        .fitness img:hover {
+            scale: 1.1;
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        .fitnessall img {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.452);
+            margin-right: 15px;
+        }
+
+        .text {
+            padding-top: 280px;
+            text-align: center;
+            font: 700;
+            line-height: 30px;
+        }
+
+        .text button {
+            padding: 5px 7px;
+            border-radius: 9px;
+            border-width: 0.3px;
+            font-size: 15px;
+        }
+
+        .text button:hover {
+            padding: 5px 7px;
+            border-radius: 9px;
+            border-width: 0.3px;
+            cursor: pointer;
+            background: rgba(135, 207, 235, 0.621);
+        }
+
+        a:link {
+            color: white;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        a:active {
+            color: white;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 60px;
+        }
+
+        .f1 {
+            width: 20vw;
+            text-align: center;
+        }
+
+        footer ul img {
+            width: 50px;
+            padding: 15px;
+        }
+        footer ul img:hover {
+            filter: drop-shadow(0px 0px 5px black);
+        }
+
+        footer ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 img {
+            width: 60px;
+        }
+
+        h1 {
+            padding-bottom: 20px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        #inf {
+            padding: 10px;
+        }
+
+        #copyright {
+            padding-bottom: 20px;
+        }
+
+        #copyright:hover {
+            padding-bottom: 20px;
+            color: rgb(24, 170, 232);
+        }
+
+        .f2 {
+            width: 20vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+        }
+
+        .f2 ul {
+            margin-top: 20px;
+            display: flex;
+            /* padding-left: 100px; */
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+
+        .f2 ul li:hover {
+            color: rgb(24, 170, 232);
+            cursor: pointer;
+        }
+
+        .f2 li h1 {
+            margin: 0;
+            text-align: start;
+        }
+
+        .f3 {
+            width: 20vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding-left: 50px;
+        }
+
+        .f3 ul {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+
+        .f3 li h1 {
+            margin: 0;
+            text-align: start;
+        }
+
+        .f3 ul li:hover {
+            color: rgb(24, 170, 232);
+            cursor: pointer;
+        }
+
+        .f23 {
+            display: flex;
+        }
+
+        @media (max-width : 1000px) {
+            #imglogo {
+                width: 50px;
+            }
+
+            #imglogo img {
+                width: 50px;
+                margin: 5px 0px 5px 0px;
+            }
+
+            .left ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                align-items: center;
+                margin-left: 3px;
+            }
+
+            .left ul li img {
+                list-style: none;
+                margin-left: 10px;
+                color: white;
+            }
+
+            .abc {
+                list-style: none;
+                margin-left: 15px;
+                color: white;
+                font-size: 4mm;
+            }
+
+            .abc:hover {
+                list-style: none;
+                margin-left: 15px;
+                color: white;
+                text-decoration-line: underline;
+                transform-origin: center;
+                transform: scale(1.05);
+                transition: transform .3s ease-out;
+                cursor: pointer;
+            }
+
+
+            #wishlist img {
+                width: 30px;
+                margin: 3px;
+                border-radius: 50%;
+            }
+
+            #wishlist img:hover {
+                width: 31.5px;
+                margin: 5px 2px 5px 2px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            #profile img {
+                width: 31.5px;
+                margin: 5px 2px 5px 2px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            #profile img:hover {
+                width: 31.5px;
+                margin: 5px 2px 5px 2px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            #search {
+                height: 30px;
+                width: 200px;
+                padding-left: 10px;
+                border-top-left-radius: 15px;
+                border-width: 0.3px;
+            }
+
+            .searchlogo img {
+                margin: 2px;
+                height: 23px;
+                width: 23px;
+                border-radius: 5PX;
+                border-top-right-radius: 1px;
+                border-bottom-left-radius: 2px;
+                border-width: 0.3px;
+            }
+
+            .searchlogo {
+                background-color: rgba(13, 211, 178, 0);
+                border-left: hidden;
+                border-bottom-right-radius: 10px;
+                border-width: 0.3px;
+            }
+
+            .searchlogo:hover {
+                background-color: rgba(21, 204, 97, 0.549);
+                cursor: pointer;
+            }
+
+            .right ul li {
+                list-style: none;
+                margin-right: 5px;
+                display: flex;
+            }
+
+            .element {
+                margin: 20px 25px;
+                height: 230px;
+                border-radius: 30px;
+                background-size: cover;
+                transition: background-image 0.5s step-end;
+                box-shadow: 0px 0px 7px rgb(0, 0, 0);
+                background-image: url(image4.jpg
+);
+            }
+
+            .element:hover {
+                margin: 20px 25px;
+                height: 230px;
+                border-radius: 30px;
+                background-size: cover;
+                transition: background-image 0.5s step-end;
+                box-shadow: 0px 0px 4px rgb(0, 0, 0);
+                cursor: pointer;
+                background-image: url(image4.jpg
+);
+            }
+
+            .grocery img {
+                width: 170px;
+                height: 170px;
+                overflow: hidden;
+                transition: all ease 0.5s;
+            }
+
+            .grocery img:hover {
+                scale: 1.1;
+            }
+
+            .main {
+                border-right: 2px solid rgba(0, 0, 0, 0.67);
+                padding-right: 15px;
+                text-align: center;
+                line-height: 25px;
+                height: 180px;
+                width: 30px;
+                font-size: 17px;
+                font-family: 'Bricolage Grotesque', sans-serif;
+            }
+
+            .main:hover {
+                border-right: 2px solid rgba(0, 0, 0, 0.67);
+                padding-right: 15px;
+                cursor: pointer;
+            }
+
+            .fashion img {
+                width: 170px;
+                height: 170px;
+                overflow: hidden;
+                transition: all ease 0.5s;
+            }
+
+            .electronics img {
+                width: 170px;
+                height: 170px;
+                overflow: hidden;
+                transition: all ease 0.5s;
+            }
+
+            .fitness img {
+                width: 170px;
+                height: 170px;
+                overflow: hidden;
+                transition: all ease 0.5s;
+            }
+
+            footer ul img {
+                width: 40px;
+                padding: 10px;
+            }
+
+            h1 {
+                padding-bottom: 15px;
+                font-size: 25px;
+                display: flex;
+                align-items: center;
+            }
+
+            h1 img {
+                width: 45px;
+            }
+
+            .text {
+                padding-top: 190px;
+                text-align: center;
+                font: 700;
+                line-height: 30px;
+            }
+
+            .text button {
+                padding: 3px 5px;
+                border-radius: 6px;
+                border-width: 0.2px;
+                font-size: 12px;
+            }
+
+            .text button:hover {
+                padding: 3px 5px;
+                border-radius: 6px;
+                border-width: 0.2px;
+                font-size: 12px;
+                cursor: pointer;
+                background: rgba(135, 207, 235, 0.621);
+            }
+
+            @media (max-width : 800px) {
+                .abc {
+                    display: none;
+                }
+
+                .center {
+                    margin-left: 50px;
+
+                }
+
+                .element {
+                    margin: 20px 25px;
+                    height: 180px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+                    background-image: url(image4.jpg
+);
+                }
+
+                .element:hover {
+                    margin: 20px 25px;
+                    height: 180px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+                    cursor: pointer;
+                    background-image: url(image4.jpg
+);
+
+                }
+
+                .text {
+                    padding-top: 145px;
+                    text-align: center;
+                    font: 700;
+                    line-height: 30px;
+                }
+
+                .grocery img {
+                    width: 150px;
+                    height: 150px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .grocery {
+                    margin-left: 25px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                }
+
+
+                .main {
+                    border-right: 2px solid rgba(0, 0, 0, 0.67);
+                    padding-right: 15px;
+                    text-align: center;
+                    line-height: 20px;
+                    height: 160px;
+                    width: 30px;
+                    font-size: 17px;
+                    font-family: 'Bricolage Grotesque', sans-serif;
+                }
+
+                .main:hover {
+                    border-right: 2px solid rgba(0, 0, 0, 0.67);
+                    padding-right: 15px;
+                    cursor: pointer;
+                }
+
+                .fashion img {
+                    width: 150px;
+                    height: 150px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fashion {
+                    margin-left: 25px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 170px;
+                }
+
+                .electronics img {
+                    width: 150px;
+                    height: 150px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .electronics {
+                    margin-left: 25px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 170px;
+
+                }
+
+                .fitness img {
+                    width: 150px;
+                    height: 150px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fitness {
+                    margin-left: 25px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 170px;
+
+                }
+
+                footer ul img {
+                    width: 40px;
+                    padding: 10px;
+                }
+
+                h1 {
+                    padding-bottom: 15px;
+                    font-size: 25px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                h1 img {
+                    width: 45px;
+                }
+
+                #logoname {
+                    display: none;
+                }
+
+                .logoo {
+                    display: flex;
+                    font-family: 'Bricolage Grotesque', sans-serif;
+                    font-size: 20px;
+                     color: rgb(255, 255, 255);
+                    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.503);
+                }
+
+                .f1 {
+                    width: 20vw;
+                    text-align: center;
+                }
+
+                footer ul img {
+                    width: 35px;
+                    padding: 10px;
+                }
+
+                footer ul {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                h1 img {
+                    width: 50px;
+                }
+
+                h1 {
+                    padding-bottom: 20px;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                #inf {
+                    padding: 1px;
+                }
+
+            }
+
+            @media (max-width : 705px) {
+                footer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin-top: 40px;
+                }
+
+
+                footer ul img {
+                    width: 30px;
+                    padding: 8px;
+                }
+
+                footer ul {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                h1 img {
+                    width: 40px;
+                }
+
+                h1 {
+                    padding-bottom: 10px;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                #inf {
+                    padding: 1px;
+                    font-size: 12px;
+                }
+
+                #copyright {
+                    padding-bottom: 20px;
+                }
+
+                #copyright:hover {
+                    padding-bottom: 15px;
+                    color: rgb(24, 170, 232);
+                }
+
+                .f2 {
+                    width: 20vw;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .f2 ul {
+                    margin-top: 10px;
+                    display: flex;
+                    /* padding-left: 100px; */
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-items: flex-start;
+                }
+
+                .f2 ul li:hover {
+                    color: rgb(24, 170, 232);
+                    cursor: pointer;
+                }
+
+                .f2 li h1 {
+                    margin: 0;
+                    text-align: start;
+                }
+
+                .f2 ul li {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+
+                .f3 ul {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-items: flex-start;
+                }
+
+                .f3 li h1 {
+                    margin: 0;
+                    text-align: start;
+                }
+
+                .f3 ul li {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+
+                .f3 ul li:hover {
+                    color: rgb(24, 170, 232);
+                    cursor: pointer;
+                }
+            }
+
+
+            @media (max-width : 600px) {
+                .grocery img {
+                    width: 130px;
+                    height: 130px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .main {
+                    border-right: 2px solid rgba(0, 0, 0, 0.67);
+                    padding-right: 15px;
+                    text-align: center;
+                    line-height: 20px;
+                    height: 150px;
+                    width: 30px;
+                    font-size: 17px;
+                    font-family: 'Bricolage Grotesque', sans-serif;
+                }
+
+                .fashion img {
+                    width: 130px;
+                    height: 130px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fashion {
+                    margin-left: 25px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 150px;
+                }
+
+                .electronics img {
+                    width: 130px;
+                    height: 130px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .electronics {
+                    margin-left: 25px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 150px;
+
+                }
+
+                .fitness img {
+                    width: 130px;
+                    height: 130px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fitness {
+                    margin-left: 25px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 150px;
+
+                }
+
+                .element {
+                    margin: 10px 15px 15px 15px;
+                    height: 150px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+                    background-image: url(image4.jpg
+);
+                }
+
+                .element:hover {
+                    margin: 10px 15px 15px 15px;
+                    height: 150px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+                    cursor: pointer;
+                    background-image: url(image4.jpg
+);
+                }
+
+                .text {
+                    padding-top: 115px;
+                    text-align: center;
+                    font: 700;
+                    line-height: 30px;
+                }
+
+                .text button {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                }
+
+                .text button:hover {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                    cursor: pointer;
+                    background: rgba(135, 207, 235, 0.621);
+                }
+            }
+
+            @media (max-width : 520px) {
+                #imglogo {
+                    width: 40px;
+                }
+
+                #imglogo img {
+                    width: 40px;
+                    margin: 5px 0px 5px 0px;
+                    filter: drop-shadow(1.5px 1.5px 1.5px rgb(0, 0, 0));
+                }
+
+                .logoo {
+                    font-size: 18px;
+                }
+
+                .left ul {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    align-items: center;
+                    margin-left: 1px;
+                }
+
+                .left ul li img {
+                    list-style: none;
+                    margin-left: 5px;
+                    color: white;
+                }
+
+                #wishlist img {
+                    width: 25px;
+                    margin: 3px;
+                    border-radius: 50%;
+                }
+
+                #wishlist img:hover {
+                    width: 28px;
+                    margin: 5px 1.5px 5px 1.5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                #profile img {
+                    width: 25px;
+                    margin: 3px;
+                    border-radius: 50%;
+                }
+
+                #profile img:hover {
+                    width: 28px;
+                    margin: 5px 1.5px 5px 1.5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                #search {
+                    height: 20px;
+                    width: 150px;
+                    padding-left: 10px;
+                    border-top-left-radius: 15px;
+                    border-width: 0.3px;
+                    font-size: 10px;
+                }
+
+                .searchlogo img {
+                    margin: 1px;
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 5PX;
+                    border-top-right-radius: 1px;
+                    border-bottom-left-radius: 2px;
+                    border-width: 0.3px;
+                }
+
+                .searchlogo {
+                    background-color: rgba(13, 211, 178, 0);
+                    border-left: hidden;
+                    border-bottom-right-radius: 10px;
+                    border-width: 0.3px;
+                }
+
+                .searchlogo:hover {
+                    background-color: rgba(21, 204, 97, 0.549);
+                    cursor: pointer;
+                }
+
+                .right ul li {
+                    list-style: none;
+                    margin-right: 5px;
+                    display: flex;
+                }
+
+                .grocery img {
+                    width: 90px;
+                    height: 110px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .grocery {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                }
+
+                .main {
+                    border-right: 1.5px solid rgba(0, 0, 0, 0.67);
+                    padding-right: 15px;
+                    text-align: center;
+                    line-height: 15px;
+                    height: 130px;
+                    width: 20px;
+                    font-size: 13px;
+                    font-family: 'Bricolage Grotesque', sans-serif;
+                }
+
+                .fashion img {
+                    width: 90px;
+                    height: 110px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fashion {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 10px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 120px;
+                }
+
+                .electronics img {
+                    width: 90px;
+                    height: 100px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .electronics {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 120px;
+
+                }
+
+                .fitness img {
+                    width: 90px;
+                    height: 100px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fitness {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 120px;
+
+                }
+
+                .element {
+                    margin: 10px 15px 15px 15px;
+                    height: 130px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+                    background-image: url(image4.jpg
+);
+                }
+
+                .element:hover {
+                    margin: 10px 15px 15px 15px;
+                    height: 130px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+                    cursor: pointer;
+                    background-image: url(image4.jpg
+);
+                }
+
+                .text {
+                    padding-top: 95px;
+                    text-align: center;
+                    font: 700;
+                    line-height: 30px;
+                }
+
+                .text button {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                }
+
+                .text button:hover {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                    cursor: pointer;
+                    background: rgba(135, 207, 235, 0.621);
+                }
+
+                footer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin-top: 30px;
+                }
+
+                footer ul img {
+                    width: 20px;
+                    padding: 5px;
+                }
+
+                h1 img {
+                    width: 30px;
+                }
+
+                h1 {
+                    padding-bottom: 5px;
+                    font-size: 13px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                #inf {
+                    padding: 1px;
+                    font-size: 10px;
+                }
+
+                #copyright {
+                    padding-bottom: 20px;
+                    font-size: 10px;
+                }
+
+                .f2 ul li {
+                    font-size: 10px;
+                    line-height: 15px;
+                }
+
+                .f3 ul {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-items: flex-start;
+                }
+
+                .f3 ul li {
+                    font-size: 10px;
+                    line-height: 15px;
+                }
+
+
+            }
+
+            @media (max-width : 430px) {
+                #imglogo {
+                    width: 30px;
+                }
+
+                #imglogo img {
+                    width: 30px;
+                    margin: 5px 0px 5px 0px;
+                }
+
+                .logoo {
+                    font-size: 15px;
+                }
+
+                #wishlist img {
+                    width: 20px;
+                    margin: 3px;
+                    border-radius: 50%;
+                }
+
+                #wishlist img:hover {
+                    width: 22px;
+                    margin: 5px 2px 5px 2px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                #profile img {
+                    width: 20px;
+                    margin: 3px;
+                    border-radius: 50%;
+                }
+
+                #profile img:hover {
+                    width: 22px;
+                    margin: 5px 2px 5px 2px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                nav {
+            box-shadow: 5px 5px 3px rgba(24, 23, 23, 0.468);
+        }
+
+                #search {
+                    height: 17px;
+                    width: 110px;
+                    padding-left: 10px;
+                    border-top-left-radius: 8px;
+                    border-width: 0.3px;
+                    font-size: 8px;
+                }
+
+                .searchlogo img {
+                    margin: 1px;
+                    height: 11px;
+                    width: 12px;
+                    border-radius: 3PX;
+                    border-top-right-radius: 1px;
+                    border-bottom-left-radius: 2px;
+                    border-width: 0.3px;
+                }
+
+                .searchlogo {
+                    background-color: rgba(13, 211, 178, 0);
+                    border-left: hidden;
+                    border-bottom-right-radius: 5px;
+                    border-width: 0.3px;
+                }
+
+                .searchlogo:hover {
+                    background-color: rgba(21, 204, 97, 0.549);
+                    cursor: pointer;
+                }
+
+                .right ul li {
+                    list-style: none;
+                    margin-right: 5px;
+                    display: flex;
+                }
+
+                .grocery img {
+                    width: 90px;
+                    height: 110px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .grocery {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                }
+
+                .main {
+                    border-right: 1.5px solid rgba(0, 0, 0, 0.67);
+                    padding-right: 15px;
+                    text-align: center;
+                    line-height: 15px;
+                    height: 130px;
+                    width: 20px;
+                    font-size: 13px;
+                    font-family: 'Bricolage Grotesque', sans-serif;
+                }
+
+                .fashion img {
+                    width: 90px;
+                    height: 110px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fashion {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 10px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 120px;
+                }
+
+                .electronics img {
+                    width: 90px;
+                    height: 100px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .electronics {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 120px;
+
+                }
+
+                .fitness img {
+                    width: 90px;
+                    height: 100px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fitness {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 120px;
+
+                }
+
+                .element {
+                    margin: 10px 15px 15px 15px;
+                    height: 130px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+                    background-image: url(image4.jpg
+);
+                }
+
+                .element:hover {
+                    margin: 10px 15px 15px 15px;
+                    height: 130px;
+                    border-radius: 30px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+                    cursor: pointer;
+                    background-image: url(image4.jpg
+);
+                }
+
+                .text {
+                    padding-top: 95px;
+                    text-align: center;
+                    font: 700;
+                    line-height: 30px;
+                }
+
+                .text button {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                }
+
+                .text button:hover {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                    cursor: pointer;
+                    background: rgba(135, 207, 235, 0.621);
+                }
+
+                footer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin-top: 40px;
+                }
+
+                footer ul img {
+                    width: 25px;
+                    padding: 5px;
+                }
+
+                h1 img {
+                    width: 25px;
+                }
+
+                h1 {
+                    padding-bottom: 5px;
+                    font-size: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .f1 h1 {
+                    margin-left: -5px;
+                }
+
+                #copyright {
+                    padding-bottom: 20px;
+                    font-size: 10px;
+                }
+
+                #copyright:hover {
+                    padding-bottom: 20px;
+                    color: rgb(24, 170, 232);
+                }
+
+                .f2 ul li {
+                    font-size: 8px;
+                    line-height: 15px;
+                }
+
+                .f3 ul li {
+                    font-size: 8px;
+                    line-height: 15px;
+                }
+
+            }
+
+
+            @media (max-width : 400px) {
+                #imglogo {
+                    width: 30px;
+                }
+
+                #imglogo img {
+                    width: 30px;
+                    margin: 5px 0px 5px 0px;
+                }
+
+                .logoo {
+                    font-size: 14px;
+                }
+
+                .grocery img {
+                    width: 70px;
+                    height: 80px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .grocery {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 85px;
+                }
+
+                .main {
+                    border-right: 1.5px solid rgba(0, 0, 0, 0.67);
+                    padding-right: 15px;
+                    text-align: center;
+                    line-height: 12px;
+                    height: 130px;
+                    width: 20px;
+                    font-size: 12px;
+                    font-family: 'Bricolage Grotesque', sans-serif;
+                }
+
+                .fashion img {
+                    width: 70px;
+                    height: 80px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fashion {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 10px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 85px;
+                }
+
+                .electronics img {
+                    width: 70px;
+                    height: 90px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .electronics {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 95px;
+
+                }
+
+                .fitness img {
+                    width: 70px;
+                    height: 90px;
+                    overflow: hidden;
+                    transition: all ease 0.5s;
+                }
+
+                .fitness {
+                    margin-left: 10px;
+                    display: flex;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.652);
+                    padding: 15px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    height: 90px;
+
+                }
+
+                .element {
+                    margin: 10px 10px 15px 10px;
+                    height: 100px;
+                    border-radius: 15px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+                    background-image: url(image4.jpg
+);
+                }
+
+                .element:hover {
+                    margin: 10px 10px 15px 10px;
+                    height: 100px;
+                    border-radius: 15px;
+                    background-size: cover;
+                    transition: background-image 0.5s step-end;
+                    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+                    cursor: pointer;
+                    background-image: url(image4.jpg
+);
+                }
+
+
+                .text {
+                    padding-top: 70px;
+                    text-align: center;
+                    font: 700;
+                    line-height: 30px;
+                }
+
+                .text button {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                }
+
+                .text button:hover {
+                    padding: 2px 4px;
+                    border-radius: 6px;
+                    border-width: 0.2px;
+                    font-size: 10px;
+                    cursor: pointer;
+                    background: rgba(135, 207, 235, 0.621);
+                }
+
+                footer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin-top: 40px;
+                }
+
+                footer ul img {
+                    width: 25px;
+                    padding: 5px;
+                }
+
+                h1 img {
+                    width: 25px;
+                }
+
+                h1 {
+                    padding-bottom: 5px;
+                    font-size: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .f1 h1 {
+                    margin-left: -5px;
+                }
+
+                #copyright {
+                    padding-bottom: 20px;
+                    font-size: 10px;
+                }
+
+                #copyright:hover {
+                    padding-bottom: 20px;
+                    color: rgb(24, 170, 232);
+                }
+
+                .f2 ul li {
+                    font-size: 8px;
+                    line-height: 15px;
+                }
+
+                .f3 ul li {
+                    font-size: 8px;
+                    line-height: 15px;
+                }
+
+            }
+
+            @media (max-width: 345px) {
+                .logoo {
+                    font-size: 13px;
+                }
+
+                #wishlist img {
+                    width: 18px;
+                    margin: 2px;
+                    border-radius: 50%;
+                }
+
+                #wishlist img:hover {
+                    width: 21px;
+                    margin: 5px 1px 5px 0.5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                #profile img {
+                    width: 20px;
+                    margin: 3px;
+                    border-radius: 50%;
+                }
+
+                #profile img:hover {
+                    width: 21.5px;
+                    margin: 5px 2px 5px 2.3px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+
+                #search {
+                    height: 17px;
+                    width: 80px;
+                    padding-left: 5px;
+                    border-top-left-radius: 8px;
+                    border-width: 0.3px;
+                    font-size: 7px;
+                }
+
+                h1 img {
+                    width: 25px;
+                }
+
+                footer ul img {
+                    width: 15px;
+                    padding: 3px;
+                }
+
+            }
+
+            @media (max-width: 312px){
+                .f3{
+                    padding-left: 20px;
+                }
+            }
+
+            @media (max-width: 304px) {
+                #imglogo img {
+                    width: 25px;
+                }
+
+                #imglogo {
+                    width: 25px;
+                }
+
+                .logoo {
+                    font-size: 11px;
+                }
+
+                #wishlist img {
+                    width: 16px;
+                    margin: 1.5px;
+                    border-radius: 50%;
+                }
+
+                #wishlist img:hover {
+                    width: 18px;
+                    margin: 5px 0.7px 5px 1px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                #profile img {
+                    width: 16px;
+                    margin: 1.5px;
+                    border-radius: 50%;
+                }
+
+                #profile img:hover {
+                    width: 18px;
+                    margin: 5px 0.7px 5px 1px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                #search {
+                    height: 15px;
+                    width: 80px;
+                    padding-left: 5px;
+                    border-top-left-radius: 8px;
+                    border-width: 0.1px;
+                    font-size: 8px;
+                }
+
+                .searchlogo img {
+                    margin: 1px;
+                    height: 11px;
+                    width: 12px;
+                    border-radius: 2PX;
+                    border-top-right-radius: 1px;
+                    border-bottom-left-radius: 2px;
+                    border-width: 0.3px;
+                }
+
+                .searchlogo {
+                    background-color: rgba(13, 211, 178, 0);
+                    border-left: hidden;
+                    border-bottom-right-radius: 7px;
+                    border-width: 0.3px;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="left">
+            <ul>
+                <li id="imglogo"><img src="Grocito_logo.png" alt=""></li>
+                <li class="logoo">Grocito</li>
+                <li class="abc"><a href="#g">Grocery</a></li>
+                <li class="abc"><a href="#f">Fashion</a></li>
+                <li class="abc"><a href="#e">Electronics</a> </li>
+                <li class="abc"><a href="#f">Fitness</a></li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <li id="logoname">Grocito</li>
+        </div>
+        <div class="right">
+            <ul>
+                <li><span><input type="text" placeholder="Search for product..." id="search"></span><span><button
+                            class="searchlogo"><img src="search.png" alt=""></button></span></li>
+                <li id="wishlist"> <img src="wishlist.jpeg" alt=""></li>
+                <li id="profile"><img src="profile.png" alt=""></li>
+                <li></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="element" id="backgroundElement">
+        <div class="text"><button>Shop now</button></div>
+    </div>
+    <section id="g">
+        <div class="grocery">
+            <div class="main"> G <br>R <br>O<br>C<br>E<br>R<br>Y
+            </div>
+            <div class="groceryall">
+                <ul>
+                    <li><img src="grocery1.jpeg" alt=""></li>
+                    <li><img src="grocery2.jpeg" alt=""></li>
+                    <li><img src="grocery3.jpeg" alt=""></li>
+                    <li><img src="grocery4.jpeg" alt=""></li>
+                    <li><img src="grocery5.jpeg" alt=""></li>
+                    <li><img src="grocery6.jpeg" alt=""></li>
+                    <li><img src="grocery7.jpeg" alt=""></li>
+                    <li><img src="grocery8.jpeg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="f">
+        <div class="fashion">
+            <div class="main">F <br>A<br>S<br>H<br>I<br>O<br>N</div>
+            <div class="fashionall">
+                <ul>
+                    <li><img src="fashion1.jpeg" alt=""></li>
+                    <li><img src="fashion2.jpeg" alt=""></li>
+                    <li><img src="fashion3.jpeg" alt=""></li>
+                    <li><img src="fashion4.jpeg" alt=""></li>
+                    <li><img src="fashion5.jpeg" alt=""></li>
+                    <li><img src="fashion6.jpeg" alt=""></li>
+                    <li><img src="fashion7.jpeg" alt=""></li>
+                    <li><img src="fashion8.jpeg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="e">
+        <div class="electronics">
+            <div class="main">G<br>A<br>D<br>D<br>G<br>E<br>T <BR>
+                S</div>
+            <div class="electronicsall">
+                <ul>
+                    <li><img src="ele1.jpeg" alt=""></li>
+                    <li><img src="ele2.jpeg" alt=""></li>
+                    <li><img src="ele3.jpeg" alt=""></li>
+                    <li><img src="ele4.jpeg" alt=""></li>
+                    <li><img src="ele5.jpeg" alt=""></li>
+                    <li><img src="ele6.jpeg" alt=""></li>
+                    <li><img src="ele7.jpeg" alt=""></li>
+                    <li><img src="ele8.jpeg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="f">
+        <div class="fitness">
+            <div class="main">F <br>I<br>T<br>N<br>E<br>S<br>S </div>
+            <div class="fitnessall">
+                <ul>
+                    <li><img src="fit1.jpg" alt=""></li>
+                    <li><img src="fit2.jpeg" alt=""></li>
+                    <li><img src="fit3.jpeg" alt=""></li>
+                    <li><img src="fit4.jpeg" alt=""></li>
+                    <li><img src="fit5.jpeg" alt=""></li>
+                    <li><img src="fit6.jpg" alt=""></li>
+                    <li><img src="fit7.jpeg" alt=""></li>
+                    <li><img src="fit8.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="f1">
+            <h1><img src="Grocito_logo.png" alt=""> GROCITO </h1>
+            <ul>
+                <li><img src="Facebook_Circle_Filled_L Shadowless.png" alt=""></li>
+                <li><img src="Instagram_Box_Filled_L.png" alt=""></li>
+                <li><img src="Twitter_Box_Filled_L Shadowless.png" alt=""></li>
+            </ul>
+            <div id="inf">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga explicabo eos obcaecati necessitatibus
+                vel dignissimos soluta excepturi ut similique fugit.</div><br>
+            <div id="copyright"> &copygrocito.pvt.lmt</div>
+        </div>
+        <span class="f23">
+            <div class="f2">
+                <li>
+                    <h1>Company</h1>
+                </li>
+                <ul>
+                    <li>About Us</li>
+                    <li>Updates and Press</li>
+                    <li>Product Roadmap</li>
+                    <li>Our Privacy Policy</li>
+                    <li>Our Terms of Use</li>
+                    <li>Our Cookie Policy</li>
+                    <li> Personal Info</li>
+                </ul>
+            </div>
+            <div class="f3">
+                <li>
+                    <h1>Support</h1>
+                </li>
+                <ul>
+                    <li>Help and Support</li>
+                    <li>FAQ`s</li>
+                    <li>Contact Us</li>
+                    <li>Pricing</li>
+                    <li>Partner with Us</li>
+                    <li>Resources</li>
+                    <li>Cookie Policy</li>
+                    <li>Legel Dictionary</li>
+                    <li>Security FAQ</li>
+                </ul>
+            </div>
+        </span>
+    </footer>
+    <script>
+        const backgroundElement = document.getElementById("backgroundElement");
+        const images = ["image1.jpeg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"];
+        let currentIndex = 0;
+
+        function changeBackgroundImage() {
+            backgroundElement.style.backgroundImage = `url(${images[currentIndex]})`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBackgroundImage, 3000);
+
+    </script>
+</body>
+
+</html>
